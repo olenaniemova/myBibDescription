@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @source_style.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @source_style.description %>
+</p>
+
+<p>
+  <strong>Schema:</strong>
+  <%= @source_style.schema %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @source_style.source_id %>
+</p>
+
+<p>
+  <strong>Bibliographic style:</strong>
+  <%= @source_style.bibliographic_style_id %>
+</p>
+
+<%= link_to 'Edit', edit_source_style_path(@source_style) %> |
+<%= link_to 'Back', source_styles_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @bibliographic_style.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bibliographic_style.description %>
+</p>
+
+<%= link_to 'Edit', edit_bibliographic_style_path(@bibliographic_style) %> |
+<%= link_to 'Back', bibliographic_styles_path %>

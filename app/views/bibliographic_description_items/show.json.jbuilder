@@ -1,0 +1,1 @@
+json.partial! "bibliographic_description_items/bibliographic_description_item", bibliographic_description_item: @bibliographic_description_item

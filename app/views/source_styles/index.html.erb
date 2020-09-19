@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Source Styles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Schema</th>
+      <th>Source</th>
+      <th>Bibliographic style</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @source_styles.each do |source_style| %>
+      <tr>
+        <td><%= source_style.title %></td>
+        <td><%= source_style.description %></td>
+        <td><%= source_style.schema %></td>
+        <td><%= source_style.source_id %></td>
+        <td><%= source_style.bibliographic_style_id %></td>
+        <td><%= link_to 'Show', source_style %></td>
+        <td><%= link_to 'Edit', edit_source_style_path(source_style) %></td>
+        <td><%= link_to 'Destroy', source_style, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Source Style', new_source_style_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @bibliographic_description_item.title %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @bibliographic_description_item.year %>
+</p>
+
+<p>
+  <strong>Publisher:</strong>
+  <%= @bibliographic_description_item.publisher %>
+</p>
+
+<p>
+  <strong>Source style:</strong>
+  <%= @bibliographic_description_item.source_style_id %>
+</p>
+
+<%= link_to 'Edit', edit_bibliographic_description_item_path(@bibliographic_description_item) %> |
+<%= link_to 'Back', bibliographic_description_items_path %>

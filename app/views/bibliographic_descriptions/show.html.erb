@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @bibliographic_description.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bibliographic_description.description %>
+</p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @bibliographic_description.profile_id %>
+</p>
+
+<%= link_to 'Edit', edit_bibliographic_description_path(@bibliographic_description) %> |
+<%= link_to 'Back', bibliographic_descriptions_path %>

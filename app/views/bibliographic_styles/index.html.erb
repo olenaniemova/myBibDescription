@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bibliographic Styles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bibliographic_styles.each do |bibliographic_style| %>
+      <tr>
+        <td><%= bibliographic_style.title %></td>
+        <td><%= bibliographic_style.description %></td>
+        <td><%= link_to 'Show', bibliographic_style %></td>
+        <td><%= link_to 'Edit', edit_bibliographic_style_path(bibliographic_style) %></td>
+        <td><%= link_to 'Destroy', bibliographic_style, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bibliographic Style', new_bibliographic_style_path %>

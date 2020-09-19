@@ -1,0 +1,42 @@
+<%= form_with(model: source_style, local: true) do |form| %>
+  <% if source_style.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(source_style.errors.count, "error") %> prohibited this source_style from being saved:</h2>
+
+      <ul>
+        <% source_style.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :schema %>
+    <%= form.text_field :schema %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source_id %>
+    <%= form.text_field :source_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bibliographic_style_id %>
+    <%= form.text_field :bibliographic_style_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

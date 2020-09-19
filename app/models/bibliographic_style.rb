@@ -1,0 +1,2 @@
+class BibliographicStyle < ApplicationRecord
+end
