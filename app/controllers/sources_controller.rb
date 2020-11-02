@@ -26,6 +26,8 @@ class SourcesController < ApplicationController
   def create
     @source = Source.new(source_params)
 
+    # binding.pry
+
     respond_to do |format|
       if @source.save
         format.html { redirect_to @source, notice: 'Source was successfully created.' }
