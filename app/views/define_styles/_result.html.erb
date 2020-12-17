@@ -1,0 +1,33 @@
+  <% if @result %>
+    <div class="result success">
+      <div class="title">
+        <i class="far fa-check-circle" aria-hidden="true"></i>
+        <p>Стиль вашого бібліографічного опису:</p>
+      </div>
+      <p class="style">
+        <%= @style.to_s.upcase %>
+      </p>
+      <p>
+        <%= link_to "Дізнатися більше про стиль", @link %>
+      </p>
+    </div>
+  <% else %>
+    <div class="result failure">
+      <div class="title">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+        <% if @style %>
+          <p>Визначити стиль вашого бібліографічного посилання повністю не вдалося. Ймовірно вірний стиль бібліографічного посилання:</p>
+        <% else %>
+          <p>Визначити стиль вашого бібліографічного посилання повністю не вдалося.</p>
+        <% end %>
+      </div>
+
+      <% if @style %>
+        <p class="style">
+          <%= @style.to_s.upcase %>
+        </p>
+        <p><%= link_to "Дізнатися більше про стиль", @link %></p>
+      <% end %>
+      <p>Перевірте форматування вашого бібліографічного посилання.</p>
+    </div>
+  <% end %>

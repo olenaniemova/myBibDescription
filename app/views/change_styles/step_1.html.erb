@@ -1,0 +1,71 @@
+<div class="change-style">
+  <h1>Перетворення бібілографічного посилання з одного стилю в інший</h1>
+
+  <p>Введіть своє бібліографічне посилання, оберіть стиль та джерело (не обов’язково) та перетворіть в інший стиль</p>
+
+  <div class="step-1">
+    <div class="title">
+      <div class="number">1</div>
+      <p>Введіть бібліографічне посилання</p>
+    </div>
+
+<!--     <form action="/change_styles/step_1" method="get" accept-charset="UTF-8" >
+      <div class="items">
+        <div class="select-step-1"> 
+          <p>Бібліографічний стиль</p>
+          <select id="style" name="style">
+            <option value="apa">APA</option>
+            <option value="mla">MLA</option>
+            <option value="harvard">Harvard</option>
+            <option value="chicago">Chicago</option>
+            <option value="dstu">ДСТУ 8300:2015</option>
+          </select>
+        </div>
+
+        <div class="select-step-1">
+          <p>Джерело</p>
+          <select id="source" name="source">
+            <option value="book">Книга</option>
+            <option value="part_of_book">Частина книги</option>
+            <option value="article">Стаття в жураналі</option>
+          </select>
+        </div>
+      </div>
+
+      <textarea id="text" name="text" type="text" ></textarea>
+      <input name="commit" type="submit" value="Визначити">
+    </form> -->
+
+    <%= form_with url: change_styles_step_1_path, method: :get do |form| %>
+      <div class="items">
+        <div class="select-step-1">
+          <p>Бібліографічний стиль</p>
+          <%= form.select "description[style]", [["APA", "apa"], ["MLA", "mla"], ["Chicago", "chicago"]] %>
+          <!-- ["ДСТУ 8302:2015", "dstu"] -->
+        </div>
+
+        <div class="select-step-1">
+          <p>Джерело</p>
+          <%= form.select "description[source]", [["Книга", "book"], ["Частина книги", "part_of_book"], ["Стаття в жураналі", "article"]] %>
+        </div>
+      </div>
+      <%= form.text_area "description[text]" %>
+      <%= form.submit "Ввести" %>
+    <% end %>
+
+  </div>
+
+  <div class="step-2 next">
+    <div class="title">
+      <div class="number">2</div>
+      <p>Підтвердіть відомості з посилання</p>
+    </div>
+  </div>
+
+  <div class="step-3">
+    <div class="title">
+      <div class="number">3</div>
+      <p>Оберіть новий стиль</p>
+    </div>
+  </div>
+</div>

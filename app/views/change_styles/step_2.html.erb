@@ -1,0 +1,51 @@
+<div class="change-style">
+  <h1>Перетворення бібілографічного посилання з одного стилю в інший</h1>
+
+  <p>Введіть своє бібліографічне посилання, оберіть стиль та джерело (не обов’язково) та перетворіть в інший стиль</p>
+
+<%= form_with url: change_styles_step_2_path, method: :get do |form| %>
+
+  <div class="step-1">
+    <div class="title">
+      <div class="number">1</div>
+      <p>Введіть бібліографічне посилання</p>
+    </div>
+
+    <p><%= @description[:text] %></p>
+    <p>Стиль: <%= @description[:style].capitalize %></p>
+    <p>Джерело:  <%= @translate[@description[:source]].capitalize %></p>
+
+    <%= form.text_field "description[text]", value: @description[:text], hidden: true %>
+    <%= form.text_field "description[style]", value: @description[:style], hidden: true %>
+    <%= form.text_field "description[source]", value: @description[:source], hidden: true %>
+  </div>
+
+  <div class="step-2">
+    <div class="title">
+      <div class="number">2</div>
+      <p>Підтвердіть відомості з посилання</p>
+    </div>
+
+      <div class="items">
+          <% @items.each do |key, value| %>
+            <div class="item">
+              <p><%= @translate[key.to_s].capitalize %>:</p>
+              <%= form.text_field "items[#{key}]", value: value %>
+            </div>
+          <% end %>
+
+          <!-- <%= form.submit "Підтвердити" %> -->
+      </div>
+      <%= form.submit "Підтвердити" %>
+
+  </div>
+
+  <% end %>
+
+  <div class="step-3 next">
+    <div class="title">
+      <div class="number">3</div>
+      <p>Оберіть новий стиль</p>
+    </div>
+  </div>
+</div>

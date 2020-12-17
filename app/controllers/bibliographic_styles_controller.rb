@@ -4,7 +4,8 @@ class BibliographicStylesController < ApplicationController
   # GET /bibliographic_styles
   # GET /bibliographic_styles.json
   def index
-    @bibliographic_styles = BibliographicStyle.all
+    # @bibliographic_styles = BibliographicStyle.all
+    render :index
   end
 
   # GET /bibliographic_styles/1
@@ -58,6 +59,36 @@ class BibliographicStylesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to bibliographic_styles_url, notice: 'Bibliographic style was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def apa
+    respond_to do |format|
+      format.html { render :apa }
+    end
+  end
+
+  def mla
+    respond_to do |format|
+      format.html { render :mla }
+    end
+  end
+
+  def harvard
+    respond_to do |format|
+      format.html { render :harvard }
+    end
+  end
+
+  def chicago
+    respond_to do |format|
+      format.html { render :chicago }
+    end
+  end
+
+  def dstu
+    respond_to do |format|
+      format.html { render :dstu }
     end
   end
 

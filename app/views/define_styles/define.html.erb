@@ -1,0 +1,12 @@
+<div class="define-style">
+  <h1>Визначення стилю бібілографічного посилання</h1>
+  <p>Введіть своє бібліографічне посилання та дізнайтеся чи правильно воно оформлене та якому стилю відповідає</p>
+
+  <form action="/define_styles/define" method="get" accept-charset="UTF-8" >
+    <textarea id="text" name="text" type="text"><%= @bibliographic_description %></textarea>
+    <input name="commit" type="submit" value="Визначити"/>
+  </form>
+
+  <%= render 'result', locals: { result: @result, style: @style, link: @link } if @render_result %>
+
+</div>
